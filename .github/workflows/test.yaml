@@ -1,0 +1,24 @@
+name: Testing
+on: [ push ]
+jobs:
+  build-image:
+    runs-on: node:20-bullseye
+    steps:
+      - name: Setup PHP with PECL extension
+        uses: https://github.com/shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: |
+            bcmath,
+            calendar,
+            ctype,
+            iconv,
+            imagick,
+            json,
+            pdo,
+            pdo_mysql,
+            redis,
+            xdebug,
+            grpc,
+            opentelemetry,
+            protobuf
